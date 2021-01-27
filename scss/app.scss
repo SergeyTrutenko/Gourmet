@@ -1,0 +1,74 @@
+@import "fonts";
+
+::-webkit-input-placeholder{color:inherit;opacity: 1; transition: all 0.3s ease;}
+::-moz-placeholder{color:inherit;opacity: 1; transition: all 0.3s ease;}
+:-ms-input-placeholder{color:inherit;opacity: 1; transition: all 0.3s ease;}
+:-moz-placeholder{color:inherit;opacity: 1; transition: all 0.3s ease;}
+input:focus:-moz-placeholder{color:transparent;opacity: 0; transition: all 0.3s ease;}
+input:focus::-moz-placeholder{color:transparent;opacity: 0; transition: all 0.3s ease;}
+input:focus:-ms-input-placeholder{color:transparent;opacity: 0; transition: all 0.3s ease;}
+input, select, textarea, button{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+input, select, textarea, button{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+::-webkit-scrollbar{width:10px;height:0;}
+::-webkit-scrollbar-thumb{background: #FF6500;}
+::-webkit-scrollbar-thumb{width:10px;height:0;}
+::-webkit-scrollbar-track{background: #fff;}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input, textarea{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+img{max-width:100%;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section{display:block;}
+
+ol, ul{list-style:none;}
+blockquote, q{quotes:none;}
+blockquote:before, blockquote:after,
+q:before, q:after{content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+input:focus,
+button,
+button:focus,
+textarea{outline:none;}
+button {cursor: pointer;}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+textarea:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+textarea:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+input[type="checkbox"], input[type="radio"]{
+ position: absolute;
+ width: 1px;
+ height: 1px;
+ overflow: hidden;
+ clip: rect(0 0 0 0);
+}
+
+
+body{line-height:1.4;transition: 0s;color: #090909;font-size: 16px;font-family: "Roboto", sans-serif;}
+
+.d-flex {display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex;}
+
+section {
+	position: relative;
+	padding: 10px 0;
+}
+
+.cc {
+	color: #005cbf;
+}
