@@ -24,6 +24,9 @@ $(document).ready(function() {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    arrows: true,
+                    prevArrow: '<button class="prev"><i class="fas fa-caret-left"></i></button>',
+                    nextArrow: '<button class="next"><i class="fas fa-caret-right"></i></button>'
                 }
             },
         ]

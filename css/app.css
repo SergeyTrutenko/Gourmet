@@ -485,7 +485,7 @@ header .container {
 
 .main-menu {
   overflow: hidden;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.5s ease;
   display: flex;
   height: 100%;
 }
@@ -525,7 +525,7 @@ header .container {
 }
 
 .main-menu.active {
-  transition: all 0.2s;
+  transition: all 0.5s ease;
   padding: 30px 40px 30px 0;
   position: fixed;
   display: flex;
@@ -534,10 +534,15 @@ header .container {
   background: #000;
   right: 0;
   top: 0;
+  visibility: visible;
   opacity: 1;
   transform: translateX(0);
   width: 300px;
   height: 100vh;
+}
+.main-menu.active li {
+  transform: translateY(0);
+  opacity: 1;
 }
 .main-menu.active li a {
   height: auto;
@@ -963,9 +968,14 @@ footer .container {
     right: 0;
     top: 0;
     opacity: 0;
+    visibility: hidden;
     transform: translateX(100%);
     width: 80vh;
     height: 100%;
+  }
+  .main-menu li {
+    transform: translateY(-10px);
+    opacity: 0;
   }
 
   h1 {
@@ -1104,11 +1114,11 @@ footer .container {
   }
 
   .prev {
-    left: 0;
+    left: 10px;
   }
 
   .next {
-    right: 0;
+    right: 10px;
   }
 
   .contacts .info,
@@ -1139,13 +1149,13 @@ footer .container {
     max-width: unset;
     top: 0;
   }
-}
-@media (max-width: 575px) {
+
   .prev, .next {
     width: 40px;
     height: 40px;
   }
-
+}
+@media (max-width: 575px) {
   .slick-dots {
     justify-content: flex-start;
     padding-left: 15px;
