@@ -120,7 +120,6 @@ h1, h2, h3, h4 {
     line-height: 1;
     text-transform: uppercase;
     font-style: italic;
-    font-size: 103px;
     font-weight: 800;
     margin-bottom: 36px;
     background: linear-gradient(#ecd16e 0%, #ac7a2b 100%);
@@ -134,6 +133,10 @@ h1, h2, h3, h4 {
         font-size: 43px;
         font-weight: 800;
     }
+}
+
+h1 {
+    font-size: 103px;
 }
 
 h2 {
@@ -223,14 +226,14 @@ h4{
 }
 
 .prev {
-    left: 0;
+    left: 368px;
     i{
         margin-left: -5px;
     }
 }
 
 .next {
-    right: 0;
+    right: 368px;
     i {
         margin-right: -5px;
     }
@@ -321,8 +324,10 @@ h4{
 
 header {
     height: 140px;
+    overflow: hidden;
 
     .container {
+        position: relative;
         height: 100%;
         align-items: center;
         justify-content: space-between;
@@ -358,6 +363,8 @@ header {
 }
 
 .main-menu {
+    overflow: hidden;
+    transition: all .2s ease-in-out;
     display: flex;
     height: 100%;
     li {
@@ -394,6 +401,41 @@ header {
             }
         }
     }
+}
+.main-menu.active {
+    transition: all .2s;
+    padding: 30px 40px 30px 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    background: #000;
+    right: 0;
+    top: 0;
+    opacity: 1;
+    transform: translateX(0);
+    width: 300px;
+    height: 100vh;
+    li a {
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+
+.menu-link .line {
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-link.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-link.active .line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-link.active .line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
 }
 
 .story {
@@ -455,6 +497,9 @@ header {
             align-items: center;
             margin: 6px 3px;
             padding: 50px 0 30px;
+            > div {
+                padding: 0 10px;
+            }
         }
     }
 }
@@ -468,10 +513,10 @@ header {
     z-index: 2;
     &__slider {
         .slick-list {
-            overflow: visible;
-            padding: 0 30px;
+            padding: 0 400px;
         }
         .slide-item {
+            width: 500px;
             filter: brightness(20%);
             margin: 0 4px;
             overflow: hidden;
@@ -553,9 +598,9 @@ header {
             justify-content: center;
         }
 
-        .slick-list{
-            overflow: visible;
-        }
+        //.slick-list{
+        //    overflow: visible;
+        //}
     }
 
     .title {
@@ -662,7 +707,322 @@ footer {
     }
 }
 
+.menu-link {
+    display: none;
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    padding: 0 5px;
+    border-radius: 3px;
+    overflow: hidden;
+    .line {
+        width: 100%;
+        height: 2px;
+        display: block;
+        background: #fff;
+        margin: 2px 0;
+    }
+}
 
+
+
+
+@media (max-width: 1700px){
+    .recipes__slider .slick-list {
+        padding: 0 260px;
+    }
+    .prev {
+        left: 230px;
+    }
+    .next {
+        right: 230px;
+    }
+    .product__slider .slick-list {
+        padding: 0 150px;
+    }
+}
+
+@media (max-width: 1430px) {
+    .recipes__slider .slick-list {
+        padding: 0 150px;
+    }
+    .prev {
+        left: 120px;
+    }
+    .next {
+        right: 120px;
+    }
+}
+
+@media (max-width: 1229px) {
+    .main-menu li {
+        margin-left: 20px;
+    }
+    .main-menu li a {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 70px;
+    }
+    h4 {
+        font-size: 38px;
+    }
+    h1, h2, h3, h4 {
+        margin-bottom: 20px;
+    }
+    .made-in img {
+        width: 150px;
+    }
+    .main-screen__info .title {
+        font-size: 30px;
+    }
+    header {
+        height: 100px;
+    }
+    .main-menu li a {
+        height: 100px;
+    }
+    .main-screen .slide-item {
+        height: calc(100vh - 100px);
+    }
+    .slick-dots {
+        display: flex !important;
+        justify-content: center;
+        position: absolute;
+        left: 20px;
+        top: auto;
+        bottom: 20px;
+        transform: none;
+    }
+    .slick-dots li {
+        margin: 0 2px;
+        display: inline-block;
+    }
+    h2 {
+        font-size: 50px;
+    }
+    .story__inner .info {
+        padding: 50px 100px;
+    }
+    .story__inner .video {
+        height: 550px;
+    }
+    .product__slider .slick-list {
+        padding: 0 100px;
+    }
+    .title {
+        font-size: 24px;
+    }
+    .recipes__slider .slide-item {
+        height: 370px;
+    }
+    .contacts .info a {
+        font-size: 34px;
+        margin-bottom: 22px;
+    }
+    .contacts__inner {
+        height: 475px;
+    }
+    .contacts {
+        bottom: -247px;
+    }
+    .slick-dots {
+        left: 0;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+    .menu-link {
+        display: flex;
+    }
+    .main-menu {
+        position: absolute;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        transform: translateX(100%);
+        width: 80vh;
+        height: 100%;
+    }
+    h1 {
+        font-size: 63px;
+    }
+    .story__inner .video,
+    .story__inner .info{
+        width: 100%;
+    }
+    .story__inner .video {
+        height: 460px;
+    }
+    h4 {
+        font-size: 30px;
+    }
+    .title {
+        font-size: 17px;
+    }
+    .product__slider .slick-list {
+        padding: 0 60px;
+    }
+    .partners img {
+        max-width: 200px;
+    }
+    .recipes__slider .slick-list {
+        padding: 0 60px;
+    }
+    .prev {
+        left: 30px;
+    }
+    .next {
+        right: 30px;
+    }
+    .recipes__info {
+        max-width: 550px;
+        flex-direction: column;
+        text-align: center;
+        >div {
+            margin-bottom: 20px;
+        }
+    }
+    .story__inner .info {
+        justify-content: center;
+        align-items: center;
+    }
+    .contacts .info {
+        padding: 10px 50px;
+    }
+    .contacts .info a {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+    .contacts__inner {
+        height: 380px;
+    }
+    footer .footer__col {
+        width: 50% !important;
+        margin-bottom: 40px;
+    }
+    .contacts {
+        bottom: -195px;
+    }
+    .find {
+        padding-top: 450px;
+        padding-bottom: 276px;
+    }
+    footer {
+        padding: 260px 0 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 46px;
+    }
+    .main-screen__info .title {
+        font-size: 22px;
+    }
+    .main-screen__info .direction {
+        padding-top: 12px;
+    }
+    .story__inner .video {
+        height: 320px;
+    }
+    .story__inner .info {
+        padding: 50px 15px;
+    }
+    h2 {
+        font-size: 38px;
+    }
+    .product__slider .slick-list {
+        padding: 0 30px;
+    }
+    h4 {
+        font-size: 27px;
+    }
+    .title {
+        font-size: 14px;
+    }
+    .partners {
+        padding: 50px 0;
+    }
+    .partners__item {
+        margin-bottom: 30px;
+    }
+    .recipes__slider .slick-list {
+        padding: 0 30px;
+    }
+    .prev {
+        left: 0;
+    }
+    .next {
+        right: 0;
+    }
+    .contacts .info,
+    .contacts .map{
+        align-items: center;
+        height: 300px;
+        width: 100%;
+    }
+    .contacts__inner {
+        height: auto;
+    }
+    .contacts .map {
+        order: -1;
+    }
+    .contacts {
+        bottom: -362px;
+    }
+    footer {
+        padding: 400px 0 50px;
+    }
+    .recipes__info {
+        border-radius: 0;
+        max-width: unset;
+        top: 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .slick-dots {
+        justify-content: flex-start;
+        left: 15px;
+        bottom: 44px;
+    }
+    .story__inner .video__link img{
+        width: 100px;
+    }
+    footer .footer__col {
+        width: 100% !important;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    footer .footer__col:nth-child(1) {
+        width: 20%;
+        margin-bottom: 0;
+    }
+    .socials {
+        justify-content: center;
+    }
+    .form-group {
+        margin: 10px auto 0 ;
+    }
+    .main-screen .slide-item {
+        background-position-x: -260px;
+    }
+    .advantages li {
+        font-size: 18px;
+    }
+    .partners img {
+        max-width: 160px;
+    }
+}
 
 
 

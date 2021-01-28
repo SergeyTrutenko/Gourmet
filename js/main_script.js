@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+
+    // sliders
+
     $('.main-screen__slider').slick({
         infinite: true,
         slidesToScroll: 1,
@@ -14,7 +17,16 @@ $(document).ready(function() {
         slidesToScroll: 1,
         arrows: false,
         dots: false,
-        autoplay: true
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+        ]
     });
 
     $('.recipes__slider').slick({
@@ -33,7 +45,34 @@ $(document).ready(function() {
         slidesToScroll: 1,
         arrows: false,
         dots: false,
-        autoplay: true
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+        ]
+    });
+
+
+
+
+
+    // menu-link
+
+    $(".menu-link").click(function () {
+        $('.menu-link').toggleClass("active");
+        $('.main-menu').toggleClass("active");
     });
 
 });
