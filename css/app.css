@@ -184,6 +184,7 @@ a:hover {
 body {
   line-height: 1.4;
   transition: 0s;
+  background: #000;
   color: #090909;
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
@@ -207,11 +208,20 @@ section {
   -webkit-text-fill-color: transparent;
 }
 
-.bg-gradient {
+.bg-orange {
   background: linear-gradient(#ecd16e 0%, #ac7a2b 100%);
 }
 
+.bg-gray {
+  background: linear-gradient(#d4d4d4 0%, #aeaeae 100%);
+}
+
+.bg-black {
+  background: linear-gradient(#494949 0%, #000000 100%);
+}
+
 .btn {
+  border: none;
   padding: 10px 20px;
   border-radius: 10px;
   background-color: white;
@@ -236,15 +246,18 @@ section {
   -webkit-text-fill-color: #fff;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   line-height: 1;
   text-transform: uppercase;
   font-style: italic;
   font-size: 103px;
   font-weight: 800;
   margin-bottom: 36px;
+  background: linear-gradient(#ecd16e 0%, #ac7a2b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-h1 span, h2 span, h3 span {
+h1 span, h2 span, h3 span, h4 span {
   text-transform: uppercase;
   display: block;
   color: #fff;
@@ -253,17 +266,22 @@ h1 span, h2 span, h3 span {
 }
 
 h2 {
-  font-size: 70px;
+  font-size: 68px;
 }
 
 h3 {
   font-size: 28px;
 }
 
+h4 {
+  font-size: 64px;
+  -webkit-text-fill-color: #fff;
+}
+
 .title {
   font-weight: 800;
   font-style: italic;
-  font-size: 43px;
+  font-size: 27px;
   text-transform: uppercase;
   color: #fff;
   line-height: 1;
@@ -271,10 +289,175 @@ h3 {
 
 .made-in {
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: 35px;
+  width: 100%;
+}
+.made-in img {
+  display: block;
+  margin: 0 0 0 auto;
 }
 
+.slick-dots li button {
+  width: 1px;
+  height: 1px;
+  display: none;
+  visibility: hidden;
+}
+
+.slick-dots {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.slick-dots li {
+  display: block;
+  transition: 0.2s;
+  margin: 5px 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #dcd2d2;
+  opacity: 0.2;
+}
+.slick-dots li.slick-active {
+  opacity: 1;
+  background: linear-gradient(#ecd16e 0%, #ac7a2b 100%);
+}
+
+.prev, .next {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 29px 0 rgba(22, 22, 22, 0.13);
+  border: none;
+  background-color: #fff;
+  top: 50%;
+  margin-top: -30px;
+  z-index: 50;
+  background: linear-gradient(#ecd16e 0%, #ac7a2b 100%);
+}
+.prev i, .next i {
+  display: block;
+  font-size: 22px;
+  color: #fff;
+}
+.prev:hover, .next:hover {
+  background: #fff;
+}
+.prev:hover i, .next:hover i {
+  color: #ecd16e;
+}
+
+.prev {
+  left: 0;
+}
+.prev i {
+  margin-left: -5px;
+}
+
+.next {
+  right: 0;
+}
+.next i {
+  margin-right: -5px;
+}
+
+.slide-item {
+  outline: none;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.socials li {
+  margin-left: 7px;
+}
+.socials li a {
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fff;
+}
+.socials li a i {
+  transition: all 0.2s;
+  font-size: 12px;
+  color: #000;
+}
+.socials li a:hover {
+  background: linear-gradient(#ecd16e 0%, #ac7a2b 100%);
+}
+.socials li a:hover i {
+  color: #fff;
+}
+
+.form-group {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 340px;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.form-group input {
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+}
+.form-group button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  color: #000;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+}
+
+.advantages {
+  margin-bottom: 20px;
+}
+.advantages li {
+  font-size: 20px;
+  font-weight: 800;
+  font-style: italic;
+  color: #000;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 7px;
+}
+.advantages li:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  background: url("../img/star.png") center center no-repeat;
+}
+
+header {
+  height: 140px;
+}
+header .container {
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-screen__info .title {
+  font-size: 43px;
+}
 .main-screen__info .direction {
   padding-top: 28px;
   border-top: solid 1px #fff;
@@ -284,7 +467,7 @@ h3 {
   font-size: 17px;
 }
 .main-screen .slide-item {
-  height: 800px;
+  height: calc(100vh - 140px);
   background: url("../img/bg-main-screen.jpg") top center no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
@@ -293,16 +476,6 @@ h3 {
   position: relative;
   height: 100%;
   align-items: center;
-}
-
-header {
-  height: 140px;
-  background: #000;
-}
-header .container {
-  height: 100%;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .main-menu {
@@ -342,6 +515,247 @@ header .container {
 }
 .main-menu li a:hover:after {
   opacity: 1;
+}
+
+.story__inner {
+  overflow: hidden;
+  flex-wrap: wrap;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.story__inner .video {
+  width: 40%;
+  height: 640px;
+  position: relative;
+}
+.story__inner .video__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.story__inner .video__link {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.story__inner .info {
+  width: 60%;
+  background: #fff;
+  padding: 50px 150px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.story__inner .info p {
+  text-align: justify;
+  margin-bottom: 16px;
+}
+.story__inner .info .title {
+  color: #000;
+  margin-bottom: 0;
+}
+
+.product__slider .slick-list {
+  padding: 0 300px;
+}
+.product__slider .slide-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6px 3px;
+  padding: 50px 0 30px;
+}
+
+.partners {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.recipes {
+  z-index: 2;
+}
+.recipes__slider .slick-list {
+  overflow: visible;
+  padding: 0 30px;
+}
+.recipes__slider .slide-item {
+  filter: brightness(20%);
+  margin: 0 4px;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 520px;
+}
+.recipes__slider .slide-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.recipes__slider .slick-active {
+  filter: brightness(100%);
+}
+.recipes__info {
+  padding: 20px 35px;
+  max-width: 830px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  color: #fff;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1;
+  text-transform: uppercase;
+  font-style: italic;
+  position: relative;
+  top: -60px;
+}
+.recipes__info div:nth-child(1) span {
+  font-size: 15px;
+  font-weight: 400;
+}
+.recipes__info div:nth-child(1) p {
+  font-size: 29px;
+  font-weight: 800;
+}
+.recipes__info ul li {
+  font-size: 18px;
+}
+.recipes__info ul li span {
+  text-transform: none;
+  font-size: 24px;
+  font-weight: 800;
+}
+.recipes__info ul li img {
+  margin-right: 10px;
+}
+
+.find {
+  text-align: center;
+  margin-top: -420px;
+  padding-top: 500px;
+  padding-bottom: 420px;
+  background: url("../img/bg-find.png") top center no-repeat #fff;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.find p {
+  width: 100%;
+  margin: 0 auto 30px;
+  max-width: 780px;
+}
+.find__slider .slide-item {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.find__slider .slick-list {
+  overflow: visible;
+}
+.find .title {
+  margin-bottom: 0;
+  color: #000;
+}
+
+.contacts {
+  position: absolute;
+  left: 0;
+  bottom: -290px;
+  width: 100%;
+}
+.contacts__inner {
+  flex-wrap: wrap;
+  height: 570px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.contacts .info {
+  height: 100%;
+  width: 50%;
+  background: url("../img/find-img.jpg") center center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px 80px;
+}
+.contacts .info a {
+  font-weight: 800;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+.contacts .info a:last-child {
+  margin-bottom: 0;
+}
+.contacts .map {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contacts .map img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contacts .map .btn {
+  position: relative;
+  z-index: 1;
+}
+
+footer {
+  padding: 470px 0 150px;
+  background: url("../img/bg-footer.jpg") top center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: #fff;
+}
+footer p {
+  font-size: 19px;
+}
+footer p span {
+  font-weight: 600;
+}
+footer .footer__link {
+  display: block;
+  transition: all 0.2s;
+  color: #fff;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+footer .footer__link:hover {
+  background: linear-gradient(#ecd16e 0%, #ac7a2b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer .footer__col:nth-child(1) {
+  width: 20%;
+}
+footer .footer__col:nth-child(2) {
+  width: 20%;
+}
+footer .footer__col:nth-child(3) {
+  width: 30%;
+}
+footer .footer__col:nth-child(4) {
+  width: 30%;
+}
+footer .container {
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 /*# sourceMappingURL=app.css.map */
